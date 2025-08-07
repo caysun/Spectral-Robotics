@@ -55,7 +55,7 @@ std::map<std::string, float> normalize(
 }
 
 int main() {
-    auto redSample = load_and_average("sampleReadings/redSide.json");
+    auto redSample = load_and_average("sampleReadings/yellowSide.json");
     auto whiteRef = load_and_average("sampleReadings/whiteRef.json");
     auto darkRef = load_and_average("sampleReadings/darkRef.json");
 
