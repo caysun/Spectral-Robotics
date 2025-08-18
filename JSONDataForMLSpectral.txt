@@ -1,0 +1,18 @@
+JSON data for ML Model (Seperate files for each lighting condition):
+
+NOTE: Get white & dark reference before each reading session for 
+each lighting condition. The dark reference should be similar between each
+lighting condition. White ref should very.
+
+NOTE: Use 4 sides of Rubik's cube for now. 10 readings per side. 10x4 = 40
+readings per lighting condition. 40x4 = 160 readings total.
+
+1. Label
+
+2. 4 ligthing conditions: pixel, dim/ambient, bright, natural/medium,
+
+3. Distance (cm)
+
+4. Raw: Array of the 10 channels of the sensor
+
+5. Calibrated: Also 10 channels of the sensor
