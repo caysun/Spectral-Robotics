@@ -59,11 +59,11 @@ std::map<std::string, float> normalize(
 }
 
 int main() {
-    auto redSample = load_and_average("sampleReadings/test.json");
-    auto whiteRef = load_and_average("sampleReadings/whiteRef.json");
-    auto darkRef = load_and_average("sampleReadings/darkRef.json");
+    auto sample = load_and_average("paperReadings/orange.json");
+    auto whiteRef = load_and_average("paperReadings/whiteRef.json");
+    auto darkRef = load_and_average("paperReadings/darkRef.json");
 
-    auto reflectance = normalize(redSample, whiteRef, darkRef);
+    auto reflectance = normalize(sample, whiteRef, darkRef);
 
     // Build JSON object to add to file
     json output;
@@ -71,11 +71,11 @@ int main() {
     for (const auto& band : BANDS) {
         output["spectral reflectance"][band] = reflectance[band];
     }
-    output["spectral reflectance"]["Label"] = "teal face";
+    output["spectral reflectance"]["Label"] = "orange slip";
 
     // Read existing data and check if file exists
     json existing_data = json::array();
-    std::ifstream inFile("calibratedReadings.json");
+    std::ifstream inFile("paperReadings/calibratedReadings.json");
     if (inFile) {
         inFile >> existing_data;
         inFile.close();
@@ -89,7 +89,7 @@ int main() {
     existing_data.push_back(output);
 
     // Write updated array back to file
-    std::ofstream outFile("calibratedReadings.json");
+    std::ofstream outFile("paperReadings/calibratedReadings.json");
     outFile << existing_data.dump(2);  // Pretty print with 2-space indentation
     outFile.close();
 

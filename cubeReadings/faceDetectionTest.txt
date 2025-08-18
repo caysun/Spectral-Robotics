@@ -2,7 +2,7 @@ expected: red face
 found: red face
 red 0.9230280769791186
 teal 0.6236670670908632
-gree n0.6511539774368722
+green 0.6511539774368722
 yellow 0.76421919576476
 
 expected: yellow face

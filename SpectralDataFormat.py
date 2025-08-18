@@ -4,7 +4,7 @@ import time
 
 # Change COM6 (Port) if on a different computer or BAUD rate to match Arduino
 ser = serial.Serial('COM6', 115200, timeout=1)
-output_file = "sampleReadings/test.json" # Change to specified file based on Light Source
+output_file = "paperReadings/darkRef.json" # Change to specified file based on Light Source
 
 data_list = []
 

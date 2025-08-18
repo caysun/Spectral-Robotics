@@ -25,8 +25,8 @@ def cosineSimilarity(f1, f2):
 def main():
     # Change COM6 (Port) if on a different computer or BAUD rate to match Arduino
     ser = serial.Serial('COM6', 115200, timeout=1)
-    calibrated_file = "calibratedReadings.json"
-    output_file = "improvedFaceDetection.txt"
+    calibrated_file = "paperReadings/calibratedReadings.json"
+    output_file = "paperReadings/colorDetection.txt"
 
     data = ""
     best_similarity_score = 0.0
@@ -36,8 +36,8 @@ def main():
     expected_object = input("Enter the expected object name: ")
 
     # Load white and dark reference if needed
-    white_ref = "sampleReadings/whiteRef.json"
-    dark_ref = "sampleReadings/darkRef.json"
+    white_ref = "paperReadings/whiteRef.json"
+    dark_ref = "paperReadings/darkRef.json"
     try:
         with open(white_ref, 'r') as wf:
             white_ref = json.load(wf)[0]['spectral data']
@@ -73,7 +73,7 @@ def main():
                         if key not in ['Clear', 'Near IR']:  # Only normalize F1-F8
                             data['spectral data'][key] = data['spectral data'][key] / clear_value
 
-                """ # White reference data after normalizing
+                # White reference data after normalizing
                 if white_ref:
                     for key in data['spectral data']:
                         if key not in ['Clear', 'Near IR']:
@@ -81,7 +81,7 @@ def main():
                             if white_ref[key] != 0:
                                 numerator = data['spectral data'][key] - dark_ref[key]
                                 denominator = white_ref[key] - dark_ref[key]
-                                data['spectral data'][key] = numerator / denominator """
+                                data['spectral data'][key] = numerator / denominator
 
                 if data:
                     print("Saving current data:", data)
@@ -102,7 +102,7 @@ def main():
                 best_similarity_score = current_similarity_score
                 detected_object_name = reading["spectral reflectance"]["Label"]
     # Write detected face and score to the output text file
-    colors = ["red","teal","green","yellow"]
+    colors = ["red", "green", "blue", "yellow", "orange"]
     with open(output_file, 'a') as f:
         f.write("expected: " + expected_object + "\n")
         f.write("found: " + detected_object_name + "\n")

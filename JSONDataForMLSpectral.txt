@@ -9,10 +9,8 @@ readings per lighting condition. 40x4 = 160 readings total.
 
 1. Label
 
-2. 4 ligthing conditions: pixel, dim/ambient, bright, natural/medium,
+2. 4 ligthing conditions: internal LED, dim/ambient, bright, natural/medium,
 
-3. Distance (cm)
+3. Raw: Array of the 10 channels of the sensor
 
-4. Raw: Array of the 10 channels of the sensor
-
-5. Calibrated: Also 10 channels of the sensor
+4. Calibrated: Also 10 channels of the sensor
