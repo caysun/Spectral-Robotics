@@ -15,6 +15,15 @@ try:
         if line.startswith("{") and line.endswith("}"):
             try:
                 data = json.loads(line)
+
+                # Extract clear value
+                clear_val = data["spectral data"]["Clear"]
+
+                # Avoid divide-by-zero
+                if clear_val != 0:
+                    for key in [f"F{i}" for i in range(1, 9)]:
+                        data["spectral data"][key] = data["spectral data"][key] / clear_val
+
                 data_list.append(data)
                 print(data)
             except json.JSONDecodeError:

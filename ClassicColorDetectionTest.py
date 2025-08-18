@@ -26,7 +26,7 @@ def main():
     # Change COM6 (Port) if on a different computer or BAUD rate to match Arduino
     ser = serial.Serial('COM6', 115200, timeout=1)
     calibrated_file = "calibratedReadings.json"
-    output_file = "faceDetectionTest.txt"
+    output_file = "improvedFaceDetection.txt"
 
     data = ""
     best_similarity_score = 0.0
@@ -34,6 +34,23 @@ def main():
     detected_object_name = ""
     # Ask user for expected object name
     expected_object = input("Enter the expected object name: ")
+
+    # Load white and dark reference if needed
+    white_ref = "sampleReadings/whiteRef.json"
+    dark_ref = "sampleReadings/darkRef.json"
+    try:
+        with open(white_ref, 'r') as wf:
+            white_ref = json.load(wf)[0]['spectral data']
+    except FileNotFoundError:
+        print("File Not Found")
+        white_ref = None
+    try:
+        with open(dark_ref, 'r') as df:
+            dark_ref = json.load(df)[0]['spectral data']
+    except FileNotFoundError:
+        print("File Not Found")
+        dark_ref = None
+
     while True:
         line = ser.readline().decode('utf-8', errors='ignore').strip()
         if line.startswith("{") and line.endswith("}"):
@@ -47,6 +64,25 @@ def main():
         # Now check for Enter press to record data
         try:
             if input("Press Enter to save current data (or Ctrl+C to quit)...") == "": # When Enter is pressed, the input is an empty string
+                # Perform white reference normalization
+                clear_value = data['spectral data']['Clear']
+
+                # Avoid division by zero
+                if clear_value != 0:
+                    for key in data['spectral data']:
+                        if key not in ['Clear', 'Near IR']:  # Only normalize F1-F8
+                            data['spectral data'][key] = data['spectral data'][key] / clear_value
+
+                """ # White reference data after normalizing
+                if white_ref:
+                    for key in data['spectral data']:
+                        if key not in ['Clear', 'Near IR']:
+                            # Avoid divide by zero
+                            if white_ref[key] != 0:
+                                numerator = data['spectral data'][key] - dark_ref[key]
+                                denominator = white_ref[key] - dark_ref[key]
+                                data['spectral data'][key] = numerator / denominator """
+
                 if data:
                     print("Saving current data:", data)
                 else:

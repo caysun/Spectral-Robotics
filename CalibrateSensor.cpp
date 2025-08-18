@@ -47,6 +47,10 @@ std::map<std::string, float> normalize(
 {
     std::map<std::string, float> normalized;
     for (const auto& band : BANDS) {
+        if(band == "Clear" || band == "Near IR"){
+            normalized[band] = sample.at(band);
+            continue;
+        }
         float numerator = sample.at(band) - dark.at(band);
         float denominator = white.at(band) - dark.at(band);
         normalized[band] = (denominator != 0.0f) ? numerator / denominator : 0.0f;
@@ -55,7 +59,7 @@ std::map<std::string, float> normalize(
 }
 
 int main() {
-    auto redSample = load_and_average("sampleReadings/yellowSide.json");
+    auto redSample = load_and_average("sampleReadings/test.json");
     auto whiteRef = load_and_average("sampleReadings/whiteRef.json");
     auto darkRef = load_and_average("sampleReadings/darkRef.json");
 
@@ -67,6 +71,7 @@ int main() {
     for (const auto& band : BANDS) {
         output["spectral reflectance"][band] = reflectance[band];
     }
+    output["spectral reflectance"]["Label"] = "teal face";
 
     // Read existing data and check if file exists
     json existing_data = json::array();
