@@ -24,7 +24,7 @@ def cosineSimilarity(f1, f2):
 
 def main():
     # Change COM6 (Port) if on a different computer or BAUD rate to match Arduino
-    ser = serial.Serial('COM6', 115200, timeout=1)
+    ser = serial.Serial('COM6', 115200, timeout=1)  
     calibrated_file = "calibratedReadings.json"
     output_file = "faceDetectionTest.txt"
 
