@@ -1,0 +1,7 @@
+SpectralDataFormat.py: divides by clear, manually for each one.
+
+CalibrateSensor.cpp: Loads + Averages + Normalizes (white reference). 
+
+Steps: Use SpectralDataFormat to create and run SpectralDataFormatML, then run and create CalibrateSensorML.
+
+SpectralDataFormatML will be the same as SpectralDataFormat just with different files to store the data. CalibrateSensorML will have to be changed so that it averages multiple times.
