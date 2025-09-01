@@ -56,7 +56,7 @@ finally:
         averaged_entry = {"label": label}
         averaged_entry.update(avg_data)
 
-        # Load existing data if file exists
+        # Load existing data if file exist
         with open(output_file, 'r') as f:
             try:
                 existing_data = json.load(f)
