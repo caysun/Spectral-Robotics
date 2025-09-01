@@ -62,7 +62,7 @@ finally:
                 existing_data = json.load(f)
                 if not isinstance(existing_data, list):
                     existing_data = []
-            except (FileNotFoundError, json.JSONDecodeError):
+            except json.JSONDecodeError:
                 existing_data = []
 
         # Append averaged data
