@@ -48,14 +48,15 @@ std::map<std::string, float> normalize(
         }
         double numerator = std::stof(sample.at(band)) - std::stof(dark.at(band));
         double denominator = std::stof(white.at(band)) - std::stof(dark.at(band));
-        normalized[band] = (denominator != 0.0f) ? numerator / denominator : 0.0f;
+        // normalized[band] = (denominator != 0.0f) ? numerator / denominator : 0.0f;
+        normalized[band] = std::stof(sample.at(band));
     }
     return normalized;
 }
 
 int main() {
 
-    auto sample = load("MLpaperReadings/test.json");
+    auto sample = load("MLpaperReadings/yellow.json");
     auto whiteRef = load("MLpaperReadings/test.json");
     auto darkRef = load("MLpaperReadings/test.json");
 
