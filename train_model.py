@@ -6,7 +6,7 @@ from sklearn.metrics import accuracy_score, classification_report
 import joblib
 
 # Load JSON file
-with open("MLpaperReadings/test.json", "r") as f:
+with open("trainingData/calibratedReadings.json", "r") as f:
     data = json.load(f)
 
 # Convert to DataFrame
