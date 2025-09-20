@@ -1,0 +1,270 @@
+[
+    {
+        "prediction": "red",
+        "probabilities": {
+            "blue": 0.16,
+            "green": 0.17,
+            "orange": 0.23,
+            "red": 0.23,
+            "yellow": 0.21
+        }
+    },
+    {
+        "prediction": "red",
+        "probabilities": {
+            "blue": 0.16,
+            "green": 0.17,
+            "orange": 0.23,
+            "red": 0.23,
+            "yellow": 0.21
+        }
+    },
+    {
+        "prediction": "red",
+        "probabilities": {
+            "blue": 0.16,
+            "green": 0.17,
+            "orange": 0.23,
+            "red": 0.23,
+            "yellow": 0.21
+        }
+    },
+    {
+        "prediction": "red",
+        "probabilities": {
+            "blue": 0.16,
+            "green": 0.17,
+            "orange": 0.23,
+            "red": 0.23,
+            "yellow": 0.21
+        }
+    },
+    {
+        "prediction": "red",
+        "probabilities": {
+            "blue": 0.16,
+            "green": 0.17,
+            "orange": 0.23,
+            "red": 0.23,
+            "yellow": 0.21
+        }
+    },
+    {
+        "=====================================================": "RED LED"
+    },
+    {
+        "prediction": "orange",
+        "probabilities": {
+            "blue": 0.16,
+            "green": 0.18,
+            "orange": 0.23,
+            "red": 0.22,
+            "yellow": 0.22
+        }
+    },
+    {
+        "prediction": "orange",
+        "probabilities": {
+            "blue": 0.16,
+            "green": 0.18,
+            "orange": 0.23,
+            "red": 0.22,
+            "yellow": 0.22
+        }
+    },
+    {
+        "prediction": "orange",
+        "probabilities": {
+            "blue": 0.16,
+            "green": 0.18,
+            "orange": 0.23,
+            "red": 0.22,
+            "yellow": 0.22
+        }
+    },
+    {
+        "prediction": "orange",
+        "probabilities": {
+            "blue": 0.16,
+            "green": 0.18,
+            "orange": 0.23,
+            "red": 0.22,
+            "yellow": 0.22
+        }
+    },
+    {
+        "prediction": "orange",
+        "probabilities": {
+            "blue": 0.16,
+            "green": 0.18,
+            "orange": 0.23,
+            "red": 0.22,
+            "yellow": 0.22
+        }
+    },
+    {
+        "=====================================================": "ORANGE LED"
+    },
+    {
+        "prediction": "yellow",
+        "probabilities": {
+            "blue": 0.16,
+            "green": 0.19,
+            "orange": 0.22,
+            "red": 0.21,
+            "yellow": 0.22
+        }
+    },
+    {
+        "prediction": "yellow",
+        "probabilities": {
+            "blue": 0.16,
+            "green": 0.19,
+            "orange": 0.22,
+            "red": 0.21,
+            "yellow": 0.22
+        }
+    },
+    {
+        "prediction": "yellow",
+        "probabilities": {
+            "blue": 0.16,
+            "green": 0.19,
+            "orange": 0.22,
+            "red": 0.21,
+            "yellow": 0.22
+        }
+    },
+    {
+        "prediction": "yellow",
+        "probabilities": {
+            "blue": 0.16,
+            "green": 0.19,
+            "orange": 0.22,
+            "red": 0.21,
+            "yellow": 0.22
+        }
+    },
+    {
+        "prediction": "yellow",
+        "probabilities": {
+            "blue": 0.16,
+            "green": 0.19,
+            "orange": 0.22,
+            "red": 0.21,
+            "yellow": 0.22
+        }
+    },
+    {
+        "=====================================================": "YELLOW LED"
+    },
+    {
+        "prediction": "yellow",
+        "probabilities": {
+            "blue": 0.18,
+            "green": 0.21,
+            "orange": 0.2,
+            "red": 0.19,
+            "yellow": 0.22
+        }
+    },
+    {
+        "prediction": "green",
+        "probabilities": {
+            "blue": 0.19,
+            "green": 0.23,
+            "orange": 0.19,
+            "red": 0.17,
+            "yellow": 0.22
+        }
+    },
+    {
+        "prediction": "green",
+        "probabilities": {
+            "blue": 0.19,
+            "green": 0.23,
+            "orange": 0.19,
+            "red": 0.17,
+            "yellow": 0.22
+        }
+    },
+    {
+        "prediction": "green",
+        "probabilities": {
+            "blue": 0.19,
+            "green": 0.23,
+            "orange": 0.19,
+            "red": 0.17,
+            "yellow": 0.22
+        }
+    },
+    {
+        "prediction": "green",
+        "probabilities": {
+            "blue": 0.19,
+            "green": 0.23,
+            "orange": 0.19,
+            "red": 0.17,
+            "yellow": 0.22
+        }
+    },
+    {
+        "=====================================================": "GREEN LED"
+    },
+    {
+        "prediction": "blue",
+        "probabilities": {
+            "blue": 0.21,
+            "green": 0.2,
+            "orange": 0.2,
+            "red": 0.19,
+            "yellow": 0.2
+        }
+    },
+    {
+        "prediction": "blue",
+        "probabilities": {
+            "blue": 0.21,
+            "green": 0.2,
+            "orange": 0.2,
+            "red": 0.19,
+            "yellow": 0.2
+        }
+    },
+    {
+        "prediction": "blue",
+        "probabilities": {
+            "blue": 0.21,
+            "green": 0.2,
+            "orange": 0.2,
+            "red": 0.19,
+            "yellow": 0.2
+        }
+    },
+    {
+        "prediction": "blue",
+        "probabilities": {
+            "blue": 0.21,
+            "green": 0.2,
+            "orange": 0.2,
+            "red": 0.19,
+            "yellow": 0.2
+        }
+    },
+    {
+        "prediction": "blue",
+        "probabilities": {
+            "blue": 0.21,
+            "green": 0.2,
+            "orange": 0.2,
+            "red": 0.19,
+            "yellow": 0.2
+        }
+    },
+    {
+        "=====================================================": "BLUE LED"
+    },
+    {
+        "*****************************************************************************": "END LED"
+    }
+]
