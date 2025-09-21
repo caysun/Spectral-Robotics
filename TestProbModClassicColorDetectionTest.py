@@ -72,12 +72,12 @@ def main():
             if input("Press Enter to save current data (or Ctrl+C to quit)...") == "": # When Enter is pressed, the input is an empty string
                 # Perform white reference normalization
                 clear_value = max(data['spectral data']['Clear'], 1e-6)
-
+                '''
                 # Divide by Clear first
                 for key in data['spectral data']:
                     if key not in ['Clear', 'Near IR']:  # Only normalize F1-F8
                         data['spectral data'][key] /= clear_value
-                
+                '''
                 if data:
                     print("Saving current data:", data)
                 else:
@@ -106,21 +106,32 @@ def main():
         sim = cosineSimilarity(data['spectral data'], template_norm)
         sim_score_list.append(sim)
     
-    temperature = 100  # play with 10-30
-    # Softmax over all 20 templates
-    probabilities_20 = softmax(np.array(sim_score_list)*temperature)
+    # Temperature scaling factor (higher = sharper probabilities)
+    TEMPERATURE = 15  # Try values between 10–30 for best separation
 
-# Combine 4 templates per color
-    color_probs_sum = {}
+    # Step 1: compute cosine similarity per template (already done: sim_score_list)
+
+    # Step 2: group by color and compute mean similarity per color
+    color_similarities = []
     for i, color in enumerate(colors):
-        color_probs_sum[color] = sum(probabilities_20[i*4:(i+1)*4])
+        start = i * 4
+        end = start + 4
+        mean_sim = np.mean(sim_score_list[start:end])
+        color_similarities.append(mean_sim)
 
-    # Optional: normalize across colors so sum = 1
-    total = sum(color_probs_sum.values())
-    color_probs_normalized = {color: round(p/total, 2) for color, p in color_probs_sum.items()}
+    # Step 3: apply temperature-scaled softmax over 5 mean scores
+    color_probs = softmax(np.array(color_similarities) * TEMPERATURE)
 
-    # Determine best color
+    # Step 4: build final color-probability dictionary
+    color_probs_normalized = {
+        color: round(float(prob), 3)  # keep 3 decimal places for clarity
+        for color, prob in zip(colors, color_probs)
+    }
+
+    # Step 5: choose most likely color
     detected_object_name = max(color_probs_normalized, key=color_probs_normalized.get)
+
+
 
     # Build new entry
     new_entry = {

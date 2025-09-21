@@ -266,5 +266,178 @@
     },
     {
         "*****************************************************************************": "END LED"
+    },
+    {
+        "prediction": "red",
+        "probabilities": {
+            "blue": 0.2,
+            "green": 0.19,
+            "orange": 0.19,
+            "red": 0.22,
+            "yellow": 0.22
+        }
+    },
+    {
+        "prediction": "red",
+        "probabilities": {
+            "blue": 0.2,
+            "green": 0.19,
+            "orange": 0.19,
+            "red": 0.22,
+            "yellow": 0.22
+        }
+    },
+    {
+        "prediction": "red",
+        "probabilities": {
+            "blue": 0.2,
+            "green": 0.19,
+            "orange": 0.19,
+            "red": 0.22,
+            "yellow": 0.22
+        }
+    },
+    {
+        "prediction": "red",
+        "probabilities": {
+            "blue": 0.2,
+            "green": 0.19,
+            "orange": 0.19,
+            "red": 0.22,
+            "yellow": 0.22
+        }
+    },
+    {
+        "prediction": "red",
+        "probabilities": {
+            "blue": 0.19,
+            "green": 0.19,
+            "orange": 0.19,
+            "red": 0.22,
+            "yellow": 0.21
+        }
+    },
+    {
+        "=====================================================": "RED YELLOW"
+    },
+    {
+        "prediction": "yellow",
+        "probabilities": {
+            "blue": 0.2,
+            "green": 0.19,
+            "orange": 0.19,
+            "red": 0.21,
+            "yellow": 0.22
+        }
+    },
+    {
+        "prediction": "yellow",
+        "probabilities": {
+            "blue": 0.2,
+            "green": 0.19,
+            "orange": 0.19,
+            "red": 0.21,
+            "yellow": 0.22
+        }
+    },
+    {
+        "prediction": "yellow",
+        "probabilities": {
+            "blue": 0.19,
+            "green": 0.13,
+            "orange": 0.13,
+            "red": 0.25,
+            "yellow": 0.29
+        }
+    },
+    {
+        "prediction": "yellow",
+        "probabilities": {
+            "blue": 0.22,
+            "green": 0.13,
+            "orange": 0.11,
+            "red": 0.23,
+            "yellow": 0.31
+        }
+    },
+    {
+        "prediction": "yellow",
+        "probabilities": {
+            "blue": 0.27,
+            "green": 0.13,
+            "orange": 0.04,
+            "red": 0.16,
+            "yellow": 0.4
+        }
+    },
+    {
+        "prediction": "yellow",
+        "probabilities": {
+            "blue": 0.27,
+            "green": 0.03,
+            "orange": 0.15,
+            "red": 0.16,
+            "yellow": 0.38
+        }
+    },
+    {
+        "prediction": "red",
+        "probabilities": {
+            "blue": 0.083,
+            "green": 0.034,
+            "orange": 0.033,
+            "red": 0.425,
+            "yellow": 0.425
+        }
+    },
+    {
+        "prediction": "yellow",
+        "probabilities": {
+            "blue": 0.09,
+            "green": 0.051,
+            "orange": 0.042,
+            "red": 0.392,
+            "yellow": 0.425
+        }
+    },
+    {
+        "prediction": "red",
+        "probabilities": {
+            "blue": 0.196,
+            "green": 0.191,
+            "orange": 0.141,
+            "red": 0.257,
+            "yellow": 0.215
+        }
+    },
+    {
+        "prediction": "yellow",
+        "probabilities": {
+            "blue": 0.109,
+            "green": 0.092,
+            "orange": 0.063,
+            "red": 0.338,
+            "yellow": 0.398
+        }
+    },
+    {
+        "prediction": "green",
+        "probabilities": {
+            "blue": 0.232,
+            "green": 0.354,
+            "orange": 0.288,
+            "red": 0.083,
+            "yellow": 0.043
+        }
+    },
+    {
+        "prediction": "green",
+        "probabilities": {
+            "blue": 0.241,
+            "green": 0.333,
+            "orange": 0.273,
+            "red": 0.1,
+            "yellow": 0.053
+        }
     }
 ]
