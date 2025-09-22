@@ -25,7 +25,7 @@ def cosineSimilarity(f1, f2):
     cosine_sim = numerator / (magA * magB)
     return cosine_sim
 
-def softmax(scores, Tempearature=0.09):
+def softmax(scores, Tempearature=1):
     scores = np.array(scores)
 
     shifted_scores = (scores - np.max(scores))/Tempearature  # Shift scores by subtracting the max for numerical stability and add temperature scaling
@@ -41,7 +41,7 @@ def main():
     # Change COM6 (Port) if on a different computer or BAUD rate to match Arduino
     ser = serial.Serial('COM6', 115200, timeout=1)
     calibrated_file = "paperReadings/calibratedReadings.json"
-    output_file = "classic_predictions.json"
+    output_file = "temperatureReadings/probabilityTest.json"
 
     data = ""
     best_similarity_score = 0.0
@@ -95,18 +95,19 @@ def main():
     colors = ["blue", "green", "orange", "red", "yellow"]
     probabilities = softmax(sim_score_list)
     
-    """ with open(output_file, 'a') as f:
+    with open(output_file, 'a') as f:
         f.write("expected: " + expected_object + "\n")
         f.write("found: " + detected_object_name + "\n")
         
         for sim_score, color in zip(sim_score_list, colors):
             f.write(f"{color} {str(sim_score)}\n")
-        f.write("\n") """
+        f.write("\n")
     
 
-    # Build the new entry
+    """ # Build the new entry
     new_entry = {
-        "prediction": detected_object_name,
+        "detected": detected_object_name,
+        "expected": expected_object,
         "probabilities": {
             color : round(prob,2)
             for prob, color in zip(probabilities, colors)
@@ -129,7 +130,7 @@ def main():
 
     # Save everything back to the JSON file
     with open(output_file, 'w') as f:
-        json.dump(data, f, indent=4)
+        json.dump(data, f, indent=4) """
     
 
 if __name__ == "__main__":
