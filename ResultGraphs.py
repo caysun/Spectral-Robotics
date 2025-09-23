@@ -86,7 +86,7 @@ for cond in df["Lighting"].unique():
     plt.title(f"True Class Probability — {cond}")
     plt.ylabel("Probability assigned to correct color")
     plt.xlabel("True Color")
-
+    plt.legend(title = "System", loc = "lower left")
     # Save PDF for Overleaf
     filename = f"plots/boxplot_{cond}.pdf"
     plt.savefig(filename, bbox_inches="tight")
